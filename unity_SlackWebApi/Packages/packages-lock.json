@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "blueback.assetlib": {
+      "version": "https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "046a61715a7a3499299641f4dd3629849d700a9a"
+    },
+    "blueback.jsonitem": {
+      "version": "https://github.com/bluebackblue/JsonItem.git?path=unity_JsonItem/Assets/UPM",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b7e6a1eb62f822c56d9da1195d87eadaf830f051"
+    },
     "com.unity.collab-proxy": {
       "version": "1.3.9",
       "depth": 0,

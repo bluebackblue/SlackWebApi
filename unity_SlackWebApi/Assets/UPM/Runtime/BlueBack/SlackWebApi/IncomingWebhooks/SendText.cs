@@ -12,9 +12,20 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 		*/
 		public enum Mode
 		{
+			/** リクエスト待ち。
+			*/
 			Request,
-			Wait,
+
+			/** 処理中。
+			*/
+			Work,
+
+			/** 結果あり。
+			*/
 			Result,
+
+			/** エラー。
+			*/
 			Error,
 		}
 
@@ -114,9 +125,9 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 					this.webrequest.SetRequestHeader("Content-Type","application/json");
 					this.webrequest.SendWebRequest();
 
-					this.mode = SendText.Mode.Wait;
+					this.mode = SendText.Mode.Work;
 				}break;
-			case SendText.Mode.Wait:
+			case SendText.Mode.Work:
 				{
 					if(this.webrequest.result == UnityEngine.Networking.UnityWebRequest.Result.InProgress){
 						//処理中。
@@ -146,7 +157,7 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 		*/
 		public System.Collections.IEnumerator Coroutine()
 		{
-			while((this.mode == Mode.Request)||(this.mode == Mode.Wait)){
+			while((this.mode == Mode.Request)||(this.mode == Mode.Work)){
 				yield return null;
 			}
 			yield break;
