@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "blueback.slackwebapi",
   "displayName": "SlackWebApi",
   "version": "0.0.1",
@@ -11,9 +11,7 @@
   "keywords": [
     "slack"
   ],
-  "dependencies": {
-    "blueback.jsonitem": "https://github.com/bluebackblue/JsonItem.git?path=unity_JsonItem/Assets/UPM"
-  },
+  "dependencies": {},
   "samples": [
     {
       "displayName": "IncomingWebhooks",
