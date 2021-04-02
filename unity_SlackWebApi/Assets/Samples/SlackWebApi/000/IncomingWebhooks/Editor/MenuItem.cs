@@ -23,19 +23,19 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 			{
 				UnityEngine.Debug.Log("Start");
 
+				//サンプル用。
+				//「https://api.slack.com/apps」でWebhookURLを取得して下記のＵＲＬを差し替える。
+				string t_webhookurl = "https://hooks.slack.com/services/T00000000/B0000000000/000000000000000000000000";
 
-				#if(true)
+				//開発用。
+				#if(DEF_USER_BLUEBACK)
 				{
-
-
+					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(BlueBack.AssetLib.LoadText.LoadTextFromAssetsPath("../../../config/SlackWebApi.txt"));
+					t_webhookurl = t_jsonitem.GetItem("webhookurl").GetStringData();
 				}
 				#endif
 
-
-				this.sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(
-					"https://hooks.slack.com/services/T00000000/B0000000000/000000000000000000000000",
-					"あいうえお"
-				);
+				this.sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(t_webhookurl	,"あいうえお");
 			}
 
 			/** Update

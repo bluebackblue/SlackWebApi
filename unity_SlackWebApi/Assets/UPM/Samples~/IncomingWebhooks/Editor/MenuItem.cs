@@ -23,10 +23,19 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 			{
 				UnityEngine.Debug.Log("Start");
 
-				this.sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(
-					"https://hooks.slack.com/services/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",
-					"あいうえお"
-				);
+				//サンプル用。
+				//「https://api.slack.com/apps」でWebhookURLを取得して下記のＵＲＬを差し替える。
+				string t_webhookurl = "https://hooks.slack.com/services/T00000000/B0000000000/000000000000000000000000";
+
+				//開発用。
+				#if(DEF_USER_BLUEBACK)
+				{
+					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(BlueBack.AssetLib.LoadText.LoadTextFromAssetsPath("../../../config/SlackWebApi.txt"));
+					t_webhookurl = t_jsonitem.GetItem("webhookurl").GetStringData();
+				}
+				#endif
+
+				this.sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(t_webhookurl	,"あいうえお");
 			}
 
 			/** Update
@@ -37,7 +46,7 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 					this.sendtext.Update();
 					switch(this.sendtext.mode){
 					case BlueBack.SlackWebApi.IncomingWebhooks.SendText.Mode.Request:
-					case BlueBack.SlackWebApi.IncomingWebhooks.SendText.Mode.Wait:
+					case BlueBack.SlackWebApi.IncomingWebhooks.SendText.Mode.Work:
 						{
 						}return;
 					}
@@ -70,11 +79,6 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 		}
 
 		/** テスト。
-
-			テスト用Slackへの招待リンク		: https://join.slack.com/t/bluebacktest/shared_invite/zt-ouhjkdsw-mVvcRoYCOBXpUndDqxW4TA
-			テスト用Slack					: https://bluebacktest.slack.com/
-			IncomingWebhooks					: https://hooks.slack.com/services/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
-
 		*/
 		[UnityEditor.MenuItem("サンプル/SlackWebApi/IncomingWebhooks/Test")]
 		private static void MenuItem_Sample_SlackWebApi_IncomingWebhooks_Test()
