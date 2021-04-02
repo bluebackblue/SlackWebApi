@@ -12,7 +12,7 @@
     "slack"
   ],
   "dependencies": {
-    "blueback.jsonitem": "https://github.com/bluebackblue/JsonItem.git?path=unity_JsonItem/Assets/UPM#0.0.1"
+    "blueback.jsonitem": "https://github.com/bluebackblue/JsonItem.git"
   },
   "samples": [
     {
