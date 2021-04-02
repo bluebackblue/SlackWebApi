@@ -9,9 +9,9 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		/** IncomingWebhooks_SendText
+		/** CoroutineDummy
 		*/
-		public class IncomingWebhooks_SendText
+		public class CoroutineDummy
 		{
 			/** sendtext
 			*/
@@ -19,7 +19,7 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 
 			/** constructor
 			*/
-			public IncomingWebhooks_SendText()
+			public CoroutineDummy()
 			{
 				UnityEngine.Debug.Log("Start");
 
@@ -83,7 +83,7 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 		[UnityEditor.MenuItem("サンプル/SlackWebApi/IncomingWebhooks/Test")]
 		private static void MenuItem_Sample_SlackWebApi_IncomingWebhooks_Test()
 		{
-			UnityEditor.EditorApplication.update += new IncomingWebhooks_SendText().Update;
+			UnityEditor.EditorApplication.update += new CoroutineDummy().Update;
 		}
 	}
 	#endif

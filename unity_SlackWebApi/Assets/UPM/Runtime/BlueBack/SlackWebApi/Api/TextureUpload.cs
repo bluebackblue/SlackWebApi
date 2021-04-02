@@ -1,12 +1,12 @@
 
 
-/** BlueBack.SlackWebApi.IncomingWebhooks
+/** BlueBack.SlackWebApi.Api
 */
-namespace BlueBack.SlackWebApi.IncomingWebhooks
+namespace BlueBack.SlackWebApi.Api
 {
-	/** SendText
+	/** TextureUpload
 	*/
-	public class SendText
+	public class TextureUpload
 	{
 		/** Mode
 		*/
@@ -29,13 +29,29 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 			Error,
 		}
 
-		/** url
+		/** token
 		*/
-		public string url;
+		public string token;
 
-		/** text
+		/** channel
 		*/
-		public string text;
+		public string channel;
+
+		/** texture
+		*/
+		public UnityEngine.Texture2D texture;
+
+		/** title
+		*/
+		public string title;
+
+		/** comment
+		*/
+		public string comment;
+
+		/** name
+		*/
+		public string name;
 
 		/** errorstring
 		*/
@@ -53,23 +69,27 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 		*/
 		public UnityEngine.Networking.UnityWebRequest webrequest;
 
-		/** uploadhandler
-		*/
-		public UnityEngine.Networking.UploadHandlerRaw uploadhandler;
-		
-		/** downloadhandler
-		*/
-		public UnityEngine.Networking.DownloadHandlerBuffer downloadhandler;
-
 		/** constructor
 		*/
-		public SendText(string a_url,string a_text)
+		public TextureUpload(string a_token,string a_channel,UnityEngine.Texture2D a_texture,string a_title,string a_comment,string a_name)
 		{
-			//url
-			this.url = a_url; 
+			//token
+			this.token = a_token; 
 
-			//text
-			this.text = a_text;
+			//channel
+			this.channel = a_channel;
+
+			//texture
+			this.texture = a_texture;
+
+			//title
+			this.title = a_title;
+
+			//comment
+			this.comment = a_comment;
+
+			//name
+			this.name = a_name;
 
 			//errorstring
 			this.errorstring = null;
@@ -82,26 +102,12 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 
 			//webrequest
 			this.webrequest = null;
-
-			//uploadhandler
-			this.uploadhandler = null;
-
-			//downloadhandler
-			this.downloadhandler = null;
 		}
 
 		/** DisposeWebRequest
 		*/
 		public void DisposeWebRequest()
 		{
-			if(this.downloadhandler != null){
-				this.downloadhandler.Dispose();
-				this.downloadhandler = null;
-			}
-			if(this.uploadhandler != null){
-				this.uploadhandler.Dispose();
-				this.uploadhandler = null;
-			}
 			if(this.webrequest != null){
 				this.webrequest.Dispose();
 				this.webrequest = null;
@@ -115,23 +121,22 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 			switch(this.mode){
 			case Mode.Request:
 				{
-					string t_jsonstring;
+					System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> t_postdata = new System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection>();
 					{
-						t_jsonstring = 
-							"{" + 
-								"\"text\"" + ":" + "\"" + this.text + "\"" + 
-							"}";
+						byte[] t_texture_byte = UnityEngine.ImageConversion.EncodeToPNG(this.texture);
+
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormDataSection("token",this.token));
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormDataSection("channels",this.channel));
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormDataSection("filename",this.name + ".png"));
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormDataSection("filetype","png"));
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormDataSection("initial_comment",this.comment));
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormDataSection("title",this.title));
+						t_postdata.Add(new UnityEngine.Networking.MultipartFormFileSection("file",t_texture_byte,this.name + ".png","image/png"));
 					}
 
 					this.DisposeWebRequest();
 
-					this.webrequest = new UnityEngine.Networking.UnityWebRequest(this.url,"POST");
-					this.uploadhandler = new UnityEngine.Networking.UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(t_jsonstring));
-					this.downloadhandler = new UnityEngine.Networking.DownloadHandlerBuffer();
-
-					this.webrequest.uploadHandler = this.uploadhandler;
-					this.webrequest.downloadHandler = this.downloadhandler;
-					this.webrequest.SetRequestHeader("Content-Type","application/json");
+					this.webrequest = UnityEngine.Networking.UnityWebRequest.Post("https://slack.com/api/files.upload?",t_postdata);
 					this.webrequest.SendWebRequest();
 
 					this.mode = Mode.Work;
