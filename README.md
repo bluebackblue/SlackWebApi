@@ -1,40 +1,40 @@
 # BlueBack.SlackWebApi
-SlackWebApi‘€ì
-* IncomingWebhooks‚Å“ŠeB
-* OAuthToken‚Å‰æ‘œ‚Ì“ŠeB
+SlackWebApiæ“ä½œ
+* IncomingWebhooksã§æŠ•ç¨¿ã€‚
+* OAuthTokenã§ç”»åƒæŠ•ç¨¿ã€‚
 
-## ƒ‰ƒCƒZƒ“ƒX
+## ãƒ©ã‚¤ã‚»ãƒ³ã‚¹
 MIT License
 * https://github.com/bluebackblue/SlackWebApi/blob/main/LICENSE
 
-## “®ìŠm”F
+## å‹•ä½œç¢ºèª
 Unity 2020.2.4f1
 
 ## URL
-### ÅV
+### æœ€æ–°
 * https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.2
-### ŠJ”­
+### é–‹ç™º
 * https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM
 
-## Unity‚Ö‚Ì’Ç‰Á•û–@
-* Unity‹N“®
-* ƒƒjƒ…[‘I‘ğFuWindow->Package Managerv
-* ƒ{ƒ^ƒ“‘I‘ğFu¶ã‚Ì{ƒ{ƒ^ƒ“v
-* ƒŠƒXƒg‘I‘ğFuAdd package from git URL...v
-* ã‹L‚ÌURL‚ğ’Ç‰Áu https://github.com/``/UPM#ƒo[ƒWƒ‡ƒ“ v
+## Unityã¸ã®è¿½åŠ æ–¹æ³•
+* Unityèµ·å‹•
+* ãƒ¡ãƒ‹ãƒ¥ãƒ¼é¸æŠï¼šã€ŒWindow->Package Managerã€
+* ãƒœã‚¿ãƒ³é¸æŠï¼šã€Œå·¦ä¸Šã®ï¼‹ãƒœã‚¿ãƒ³ã€
+* ãƒªã‚¹ãƒˆé¸æŠï¼šã€ŒAdd package from git URL...ã€
+* ä¸Šè¨˜ã®URLã‚’è¿½åŠ ã€Œ https://github.com/ï½ï½/UPM#ãƒãƒ¼ã‚¸ãƒ§ãƒ³ ã€
 
-### ’
-GitƒNƒ‰ƒCƒAƒ“ƒg‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚é•K—v‚ª‚ ‚éB
+### æ³¨
+Gitã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚‹ã€‚
 * https://docs.unity3d.com/ja/current/Manual/upm-git.html
 * https://git-scm.com/
 
-## ƒTƒ“ƒvƒ‹
+## ã‚µãƒ³ãƒ—ãƒ«
 
 ```
 {
 	BlueBack.SlackWebApi.IncomingWebhooks.SendText t_sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(
 		"https://hooks.slack.com/services/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",
-		"‚ ‚¢‚¤‚¦‚¨"
+		"ã‚ã„ã†ãˆãŠ"
 	);
 
 	yield return t_sendtext.Coroutine();
