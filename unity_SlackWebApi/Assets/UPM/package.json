@@ -12,7 +12,7 @@
     "slack"
   ],
   "dependencies": {
-    "blueback.jsonitem": "https://github.com/bluebackblue/JsonItem.git"
+    "blueback.jsonitem": "0.0.3"
   },
   "samples": [
     {
