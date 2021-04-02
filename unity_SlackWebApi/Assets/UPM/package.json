@@ -1,0 +1,21 @@
+{
+  "name": "blueback.slackwebapi",
+  "displayName": "SlackWebApi",
+  "version": "0.0.1",
+  "unity": "2020.1",
+  "description": "SlackWebApi操作",
+  "author": {
+    "name": "BlueBack",
+    "url": "https://github.com/bluebackblue"
+  },
+  "keywords": [
+    "slack"
+  ],
+  "dependencies": {},
+  "samples": [
+    {
+      "displayName": "IncomingWebhooks",
+      "path": "Samples~/IncomingWebhooks"
+    }
+  ]
+}
