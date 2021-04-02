@@ -13,9 +13,9 @@ namespace Samples.SlackWebApi.Api.Editor
 		*/
 		public class CoroutineDummy
 		{
-			/** fileupload
+			/** TextureUpload
 			*/
-			private BlueBack.SlackWebApi.Api.FileUpload fileupload;
+			private BlueBack.SlackWebApi.Api.TextureUpload fileupload;
 
 			/** constructor
 			*/
@@ -25,7 +25,11 @@ namespace Samples.SlackWebApi.Api.Editor
 
 				//サンプル用。
 				//「https://api.slack.com/apps」でOAuthTokenを取得して下記のトークンを差し替える。
+				//ファイルのアップロードには「files:write」のパーミッションが必要。
 				string t_oauthtoken = "xoxb-000000000000-0000000000000-000000000000000000000000";
+
+				//投稿先のチャンネル名。
+				string t_channel = "#general";
 
 				//開発用。
 				#if(DEF_USER_BLUEBACK)
@@ -45,7 +49,8 @@ namespace Samples.SlackWebApi.Api.Editor
 					t_texture.Apply();
 				}
 
-				this.fileupload = new BlueBack.SlackWebApi.Api.FileUpload(t_oauthtoken,UnityEngine.ImageConversion.EncodeToPNG(t_texture));
+				//fileupload
+				this.fileupload = new BlueBack.SlackWebApi.Api.TextureUpload(t_oauthtoken,t_channel,t_texture,"タイトル","コメント",(UnityEngine.Time.time % 10000).ToString());
 			}
 
 			/** Update
@@ -55,8 +60,8 @@ namespace Samples.SlackWebApi.Api.Editor
 				if(this.fileupload != null){
 					this.fileupload.Update();
 					switch(this.fileupload.mode){
-					case BlueBack.SlackWebApi.Api.FileUpload.Mode.Request:
-					case BlueBack.SlackWebApi.Api.FileUpload.Mode.Work:
+					case BlueBack.SlackWebApi.Api.TextureUpload.Mode.Request:
+					case BlueBack.SlackWebApi.Api.TextureUpload.Mode.Work:
 						{
 						}return;
 					}
