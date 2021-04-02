@@ -24,7 +24,7 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 				UnityEngine.Debug.Log("Start");
 
 				this.sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(
-					"https://hooks.slack.com/services/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",
+					"https://hooks.slack.com/services/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",
 					"あいうえお"
 				);
 			}
@@ -73,7 +73,7 @@ namespace Samples.SlackWebApi.IncomingWebhooks.Editor
 
 			テスト用Slackへの招待リンク		: https://join.slack.com/t/bluebacktest/shared_invite/zt-ouhjkdsw-mVvcRoYCOBXpUndDqxW4TA
 			テスト用Slack					: https://bluebacktest.slack.com/
-			IncomingWebhooks					: https://hooks.slack.com/services/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
+			IncomingWebhooks					: https://hooks.slack.com/services/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
 
 		*/
 		[UnityEditor.MenuItem("サンプル/SlackWebApi/IncomingWebhooks/Test")]

@@ -99,42 +99,7 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 					{
 						t_jsonstring = 
 							"{" + 
-								"\"text\":\"" + this.text + "\"" + 
-							
-								"," +
-
-								"\"attachments\":[" +
-									"{" +
-										"\"type\":" + "\"section\"" + 
-										
-										"," +
-
-										"\"text\":" + "{" +
-											"\"type\":" + "\"mrkdwn\"" + 
-											
-											"," +
-
-											"\"text\":" + "\"aaaaaaa\"" +
-										"}" +
-									"}" +
-
-									"," +
-
-									"{" +
-										"\"type\":" + "\"section\"" + 
-										
-										"," +
-
-										"\"text\":" + "{" +
-											"\"type\":" + "\"mrkdwn\"" + 
-											
-											"," +
-
-											"\"text\":" + "\"> bbbbbbb\"" +
-										"}" +
-									"}" +
-
-								"]" +
+								"\"text\"" + ":" + "\"" + this.text + "\"" + 
 							"}";
 					}
 
