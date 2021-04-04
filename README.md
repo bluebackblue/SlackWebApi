@@ -12,7 +12,7 @@ Unity 2020.2.4f1
 
 ## URL
 ### 最新
-* https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.2
+* https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.3
 ### 開発
 * https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM
 
