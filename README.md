@@ -31,13 +31,4 @@ Gitクライアントがインストールされている必要がある。
 ## サンプル
 
 ```
-{
-	BlueBack.SlackWebApi.IncomingWebhooks.SendText t_sendtext = new BlueBack.SlackWebApi.IncomingWebhooks.SendText(
-		"https://hooks.slack.com/services/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",
-		"あいうえお"
-	);
-
-	yield return t_sendtext.Coroutine();
-}
 ```
-
