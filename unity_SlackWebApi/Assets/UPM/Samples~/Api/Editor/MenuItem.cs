@@ -9,9 +9,9 @@ namespace Samples.SlackWebApi.Api.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		/** CoroutineDummy
+		/** FileUpdate_CoroutineDummy
 		*/
-		public class CoroutineDummy
+		public class FileUpdate_CoroutineDummy
 		{
 			/** TextureUpload
 			*/
@@ -19,7 +19,7 @@ namespace Samples.SlackWebApi.Api.Editor
 
 			/** constructor
 			*/
-			public CoroutineDummy()
+			public FileUpdate_CoroutineDummy()
 			{
 				UnityEngine.Debug.Log("Start");
 
@@ -93,12 +93,12 @@ namespace Samples.SlackWebApi.Api.Editor
 			}
 		}
 
-		/** テスト。
+		/** ファイルアップロード。
 		*/
 		[UnityEditor.MenuItem("サンプル/SlackWebApi/Api/FileUpdate")]
-		private static void MenuItem_Sample_SlackWebApi_IncomingWebhooks_Test()
+		private static void MenuItem_FileUpdate()
 		{
-			UnityEditor.EditorApplication.update += new CoroutineDummy().Update;
+			UnityEditor.EditorApplication.update += new FileUpdate_CoroutineDummy().Update;
 		}
 	}
 	#endif
