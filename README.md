@@ -7,12 +7,18 @@ SlackWebApi操作
 MIT License
 * https://github.com/bluebackblue/SlackWebApi/blob/main/LICENSE
 
+## 外部依存 / 使用ライセンス等
+* https://api.slack.com/web
+
+### サンプルのみ
+* https://github.com/bluebackblue/AssetLib
+
 ## 動作確認
 Unity 2020.2.4f1
 
 ## URL
 ### 最新
-* https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.2
+* https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.3
 ### 開発
 * https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM
 
