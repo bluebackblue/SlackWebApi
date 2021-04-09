@@ -83,6 +83,7 @@ public class Setting
 				"## 外部依存 / 使用ライセンス等",
 				"### サンプルのみ",
 				"* https://github.com/bluebackblue/AssetLib",
+				"* https://github.com/bluebackblue/JsonItem",
 			};
 		},
 
