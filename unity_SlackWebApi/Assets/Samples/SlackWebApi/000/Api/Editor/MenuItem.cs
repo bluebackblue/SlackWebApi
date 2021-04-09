@@ -34,7 +34,7 @@ namespace Samples.SlackWebApi.Api.Editor
 				//開発用。
 				#if(DEF_USER_BLUEBACK)
 				{
-					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("../../../config/SlackWebApi.txt"));
+					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("../../../config/SlackWebApi.txt",null));
 					t_oauthtoken = t_jsonitem.GetItem("xoxb").GetStringData();
 				}
 				#endif

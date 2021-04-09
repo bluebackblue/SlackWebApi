@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+
+
+  <Style src="window.uss" />
+
+  <!-- リロード -->
+  <Box>
+    <Button name="reload" text="ReLoad" />
+    <Label name="error" class="red" text=" "/>
+  </Box>
+  
+  <!-- サンプルコピー -->
+  <Box>
+    <Button name="samplecopy" text="SampleCopy" />
+  </Box>
+
+  <!-- server.tag -->
+  <Box>
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+
+    <Box class="row">
+      <Label class="way3" text="server.tag" />
+      <Label class="way3" name="label_server" text="---" />
+    </Box>
+    <Button name="button_server" text="---" />
+  </Box>
+
+  <!-- readme.md -->
+  <Box>
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+
+    <Box class="row">
+      <Label class="way3" text="README.md"/>
+      <Label class="way3" name="label_readme" text="---" />
+    </Box>
+    <Box class="row">
+      <Button class="way3" name="button_readme_0" text="---" />
+      <Button class="way3" name="button_readme_1" text="---" />
+      <Button class="way3" name="button_readme_2" text="---" />
+    </Box>
+  </Box>
+
+  <!-- package.json -->
+  <Box>
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+
+    <Box class="row">
+      <Label class="way3" text="package.json"/>
+      <Label class="way3" name="label_package" text="---" />
+    </Box>
+    <Box class="row">
+      <Button class="way3" name="button_package_0" text="---" />
+      <Button class="way3" name="button_package_1" text="---" />
+      <Button class="way3" name="button_package_2" text="---" />
+    </Box>
+  </Box>
+</UXML>
