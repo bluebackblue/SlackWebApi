@@ -11,7 +11,8 @@
   <!-- リロード -->
   <Box>
     <Button name="reload" text="ReLoad" />
-    <Label name="error" class="red" text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
   </Box>
   
   <!-- サンプルコピー -->
@@ -19,14 +20,19 @@
     <Button name="samplecopy" text="SampleCopy" />
   </Box>
 
-  <!-- server.tag -->
+  <!-- ＵＴＦ８にコンバート -->
   <Box>
-    <Label text=" "/>
+    <Button name="converttoutf8" text="ConvertToUtf8" />
+  </Box>
+
+
+  <!-- server.json -->
+  <Box>
     <Label text=" "/>
     <Label text=" "/>
 
     <Box class="row">
-      <Label class="way3" text="server.tag" />
+      <Label class="way3" text="server.json" />
       <Label class="way3" name="label_server" text="---" />
     </Box>
     <Button name="button_server" text="---" />
@@ -34,7 +40,6 @@
 
   <!-- readme.md -->
   <Box>
-    <Label text=" "/>
     <Label text=" "/>
     <Label text=" "/>
 
@@ -51,7 +56,6 @@
 
   <!-- package.json -->
   <Box>
-    <Label text=" "/>
     <Label text=" "/>
     <Label text=" "/>
 

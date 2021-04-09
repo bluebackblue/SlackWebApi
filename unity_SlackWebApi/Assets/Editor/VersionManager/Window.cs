@@ -33,10 +33,6 @@ namespace Editor.VersionManager
 			}
 		}
 
-		/** error
-		*/
-		private string error;
-
 		/** serverjson
 		*/
 		private Creator_ServerJson serverjson;
@@ -56,9 +52,6 @@ namespace Editor.VersionManager
 			UnityEngine.Debug.Log("Window : constructor");
 
 			s_window = this;
-
-			//error
-			this.error = "";
 
 			//serverjson
 			this.serverjson = null;
@@ -109,17 +102,6 @@ namespace Editor.VersionManager
 			UnityEngine.UIElements.VisualElement t_root_element = t_visualtree.CloneTree();
 			t_root.Add(t_root_element);
 
-			//エラー。
-			{
-				{
-					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"error");
-					if(t_label != null){
-						//github
-						t_label.text = this.error;
-					}
-				}
-			}
-
 			//リロードボタン。
 			{
 				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"reload");
@@ -143,9 +125,21 @@ namespace Editor.VersionManager
 				}
 			}
 
-			//「server.tag」。
+			//ＵＴＦ８にコンバート。
 			{
-				UnityEngine.Debug.Log("server.tag : " + this.serverjson.status.lasttag);
+				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"converttoutf8");
+				if(t_button != null){
+					t_button.clickable.clicked += () => {
+						UnityEngine.Debug.Log("ConvertToUtf8");
+						BlueBack.AssetLib.Editor.ConvertText.ConvertTextToUtf8FromAssetsPath("",".*","^.*\\.cs$",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+						this.OnEnable();
+					};
+				}
+			}
+
+			//「server.json」。
+			{
+				UnityEngine.Debug.Log("server.json : " + this.serverjson.status.lasttag);
 
 				{
 					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_server");

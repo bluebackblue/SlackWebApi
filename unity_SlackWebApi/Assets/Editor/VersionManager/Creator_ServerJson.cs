@@ -54,17 +54,21 @@ namespace Editor.VersionManager
 			try{
 				//download
 				{
-					string t_jsonstring = BlueBack.AssetLib.Editor.LoadText.TryLoadTextFromUrl("https://api.github.com/repos/bluebackblue/" + Setting.PACKAGE_NAME + "/releases/latest",null,System.Text.Encoding.GetEncoding("utf-8"));
-					t_jsonstring = BlueBack.JsonItem.Normalize.Convert(t_jsonstring);
-					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(t_jsonstring);
-					this.status.lasttag = t_jsonitem.GetItem("name").GetStringData();
-					this.status.time = System.DateTime.Now.ToString();
-				}
+					string t_jsonstring_download = BlueBack.AssetLib.Editor.LoadText.TryLoadTextFromUrl("https://api.github.com/repos/bluebackblue/" + Setting.PACKAGE_NAME + "/releases/latest",null,System.Text.Encoding.GetEncoding("utf-8"));
+					UnityEngine.Debug.Log(t_jsonstring_download);
+					
+					t_jsonstring_download = BlueBack.JsonItem.Normalize.Convert(t_jsonstring_download);
+					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(t_jsonstring_download);
+					if(this.status.lasttag != t_jsonitem.GetItem("name").GetStringData()){
+						this.status.lasttag = t_jsonitem.GetItem("name").GetStringData();
+						this.status.time = System.DateTime.Now.ToString();
 
-				//save
-				{
-					string t_jsonstring = BlueBack.JsonItem.Convert.ObjectToJsonString<Status>(this.status);
-					BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath(t_jsonstring,"server.json",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+						//save
+						{
+							string t_jsonstring_save = BlueBack.JsonItem.Convert.ObjectToJsonString<Status>(this.status);
+							BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath(t_jsonstring_save,"server.json",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+						}
+					}
 				}
 			}catch(System.Exception t_exception){
 				UnityEngine.Debug.LogError(t_exception.Message);
