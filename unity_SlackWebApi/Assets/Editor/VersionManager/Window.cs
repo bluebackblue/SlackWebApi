@@ -33,62 +33,79 @@ namespace Editor.VersionManager
 			}
 		}
 
-		/** serverjson
+		/** server_json
 		*/
-		private Creator_ServerJson serverjson;
+		private Creator_ServerJson server_json;
 
-		/** packagejson
+		/** upm_package_json
 		*/
-		private Creator_PackageJson packagejson;
+		private Creator_UpmPackageJson upm_package_json;
 
-		/** readmemd
+		/** readme_md
 		*/
-		private Creator_ReadmeMd readmemd;
+		private Creator_ReadmeMd readme_md;
+
+		/** upm_changelog_md
+		*/
+		private Creator_UpmChangeLogMd upm_changelog_md; 
+
+		/** upm_documentation
+		*/
+		private Creator_UpmDocumentation upm_documentation; 
+
+		/** upm_readme_md
+		*/
+		private Creator_UpmReadmeMd upm_readme_md; 
 
 		/** constructor
 		*/
 		public Window()
 		{
-			UnityEngine.Debug.Log("Window : constructor");
-
 			s_window = this;
 
-			//serverjson
-			this.serverjson = null;
+			//server_json
+			this.server_json = null;
 
-			//packagejson
-			this.packagejson = null;
+			//upm_package_json
+			this.upm_package_json = null;
 
-			//readmemd
-			this.readmemd = null;
+			//readme_md
+			this.readme_md = null;
 
-			UnityEditor.Compilation.CompilationPipeline.compilationFinished += OnCompilationFinished;
+			//upm_changelog_md
+			this.upm_changelog_md = null;
+
+			//upm_documentation
+			this.upm_documentation = null;
+
+			//upm_readme_md
+			this.upm_readme_md = null;
 
 			//タイトル。
 			this.titleContent.text = "VersionManager";
-		}
-
-		/** コンパイル完了。
-		*/
-		private void OnCompilationFinished(System.Object a_object)
-		{
-			UnityEngine.Debug.Log("Window : OnCompilationFinished");
 		}
 
 		/** OnEnable
 		*/
 		private void OnEnable()
 		{
-			UnityEngine.Debug.Log("Window : OnEnable");
+			//server_json
+			this.server_json = new Creator_ServerJson();
 
-			//serverjson
-			this.serverjson = new Creator_ServerJson();
+			//upm_package_json
+			this.upm_package_json = new Creator_UpmPackageJson();
 
-			//packagejson
-			this.packagejson = new Creator_PackageJson();
+			//readme_md
+			this.readme_md = new Creator_ReadmeMd();
 
-			//readmemd
-			this.readmemd = new Creator_ReadmeMd();
+			//upm_changelog_md
+			this.upm_changelog_md = new Creator_UpmChangeLogMd();
+
+			//upm_documentation
+			this.upm_documentation = new Creator_UpmDocumentation();
+
+			//upm_readme_md
+			this.upm_readme_md = new Creator_UpmReadmeMd();
 
 			//ルート。
 			UnityEngine.UIElements.VisualElement t_root = this.rootVisualElement;
@@ -107,7 +124,6 @@ namespace Editor.VersionManager
 				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"reload");
 				if(t_button != null){
 					t_button.clickable.clicked += () => {
-						UnityEngine.Debug.Log("Reload");
 						this.OnEnable();
 					};
 				}
@@ -118,8 +134,18 @@ namespace Editor.VersionManager
 				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"samplecopy");
 				if(t_button != null){
 					t_button.clickable.clicked += () => {
-						UnityEngine.Debug.Log("SampleCopy");
 						SampleCopy.Copy();
+						this.OnEnable();
+					};
+				}
+			}
+
+			//ブラウザを開く。
+			{
+				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"openbrowser");
+				if(t_button != null){
+					t_button.clickable.clicked += () => {
+						UnityEngine.Application.OpenURL(Setting.AUTHOR_URL + "/" + Setting.PACKAGE_NAME);
 						this.OnEnable();
 					};
 				}
@@ -130,8 +156,40 @@ namespace Editor.VersionManager
 				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"converttoutf8");
 				if(t_button != null){
 					t_button.clickable.clicked += () => {
-						UnityEngine.Debug.Log("ConvertToUtf8");
 						BlueBack.AssetLib.Editor.ConvertText.ConvertTextToUtf8FromAssetsPath("",".*","^.*\\.cs$",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+						this.OnEnable();
+					};
+				}
+			}
+
+			//「UPM/CAHGELOG.md」。
+			{
+				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"upm_changelog_md");
+				if(t_button != null){
+					t_button.clickable.clicked += () => {
+						this.upm_changelog_md.Save();
+						this.OnEnable();
+					};
+				}
+			}
+
+			//「UPM/Documentation~」。
+			{
+				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"upm_documentation");
+				if(t_button != null){
+					t_button.clickable.clicked += () => {
+						this.upm_documentation.Save();
+						this.OnEnable();
+					};
+				}
+			}
+
+			//「UPM/Documentation~」。
+			{
+				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"upm_readme_md");
+				if(t_button != null){
+					t_button.clickable.clicked += () => {
+						this.upm_readme_md.Save();
 						this.OnEnable();
 					};
 				}
@@ -139,28 +197,23 @@ namespace Editor.VersionManager
 
 			//「server.json」。
 			{
-				UnityEngine.Debug.Log("server.json : " + this.serverjson.status.lasttag);
-
 				{
 					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_server");
 					if(t_label != null){
-						t_label.text = this.serverjson.status.time;
+						t_label.text = this.server_json.status.time;
 					}
-
 				}
 
 				{
 					UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"button_server");
 					if(t_button != null){
-						t_button.text = this.serverjson.status.lasttag;
+						t_button.text = this.server_json.status.lasttag;
 						t_button.AddToClassList("red");
 
 						t_button.clickable.clicked += () => {
-							UnityEngine.Debug.Log("Download");
-							this.serverjson.Download();
+							this.server_json.Download();
 							this.OnEnable();
 						};
-
 					}
 				}
 			}
@@ -170,7 +223,7 @@ namespace Editor.VersionManager
 				{
 					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_readme");
 					if(t_label != null){
-						t_label.text = this.readmemd.version;
+						t_label.text = this.readme_md.version;
 					}
 				}
 
@@ -178,7 +231,7 @@ namespace Editor.VersionManager
 					UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"button_readme_" + ii.ToString());
 					if(t_button != null){
 
-						string[] t_version_split = this.serverjson.status.lasttag.Split('.');
+						string[] t_version_split = this.server_json.status.lasttag.Split('.');
 						int t_version_split_item2 = int.Parse(t_version_split[2]);
 
 						string t_version;
@@ -204,13 +257,13 @@ namespace Editor.VersionManager
 						}
 
 						t_button.text = t_version;
-						if(t_version == this.readmemd.version){
+						if(t_version == this.readme_md.version){
 							t_button.AddToClassList("red");
 						}
 
 						//「package.json」作成。
 						t_button.clickable.clicked += () => {
-							this.readmemd.SaveReadmeMd(t_version);
+							this.readme_md.Save(t_version);
 							this.OnEnable();
 						};
 					}
@@ -219,8 +272,6 @@ namespace Editor.VersionManager
 
 			//「package.json」。
 			{
-				UnityEngine.Debug.Log("package.json : " + Setting.GetPackageVersion());
-
 				{
 					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_package");
 					if(t_label != null){
@@ -232,7 +283,7 @@ namespace Editor.VersionManager
 					UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"button_package_" + ii.ToString());
 					if(t_button != null){
 
-						string[] t_version_split = this.serverjson.status.lasttag.Split('.');
+						string[] t_version_split = this.server_json.status.lasttag.Split('.');
 						int t_version_split_item2 = int.Parse(t_version_split[2]);
 
 						string t_version;
@@ -264,8 +315,7 @@ namespace Editor.VersionManager
 
 						//「package.json」作成。
 						t_button.clickable.clicked += () => {
-							this.packagejson.SavePackageJson(t_version);
-							this.packagejson.SaveVersionCs(t_version);
+							this.upm_package_json.Save(t_version);
 							this.OnEnable();
 						};
 					}
