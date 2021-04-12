@@ -32,21 +32,13 @@ namespace Editor.VersionManager
 		{
 			if(BlueBack.AssetLib.Editor.ExistFile.IsExistFileFromAssetsPath("server.json") == true){
 				//load
-				{
-					string t_jsonstring = BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("server.json",null);
-					this.status = BlueBack.JsonItem.Convert.JsonStringToObject<Status>(t_jsonstring);
-				}
+				string t_jsonstring = BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("server.json",null);
+				this.status = BlueBack.JsonItem.Convert.JsonStringToObject<Status>(t_jsonstring);
 			}else{
-				//save
-				{
-					this.status.lasttag = "0.0.-1";
-					this.status.time = "---";
-					string t_jsonstring = BlueBack.JsonItem.Convert.ObjectToJsonString<Status>(this.status);
-					BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath(t_jsonstring,"server.json",false,BlueBack.AssetLib.LineFeedOption.CRLF);
-				}
+				//dummy
+				this.status.lasttag = "0.0.-1";
+				this.status.time = "---";
 			}
-
-			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 		}
 
 		/** Download

@@ -1,0 +1,19 @@
+{
+    "name": "Samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1c29d5a3963cf2f4b9c5a40f18a1cfeb",
+        "GUID:96df67cbf8a508749b063eade9274e19",
+        "GUID:d9fbbca419fceae48a338c806e9e3d07",
+        "GUID:851ead64da1dd9a40aec33e5244d17a0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
