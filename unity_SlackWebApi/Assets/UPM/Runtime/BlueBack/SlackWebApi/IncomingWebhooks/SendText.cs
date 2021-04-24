@@ -117,9 +117,10 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 				{
 					string t_jsonstring;
 					{
+						string t_text = this.text.Replace("\r","").Replace('\"','\'');
 						t_jsonstring = 
 							"{" + 
-								"\"text\"" + ":" + "\"" + this.text + "\"" + 
+								"\"text\"" + ":" + "\"" + t_text + "\"" + 
 							"}";
 					}
 
