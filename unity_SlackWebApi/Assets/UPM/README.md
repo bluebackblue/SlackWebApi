@@ -17,7 +17,7 @@ Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.9
+* https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#0.0.10
 ### 開発
 * https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM
 
