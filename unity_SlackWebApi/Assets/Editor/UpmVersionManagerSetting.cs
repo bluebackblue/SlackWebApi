@@ -30,27 +30,42 @@ namespace Editor
 				//author_name
 				t_param.author_name = "BlueBack";
 
-				//author_url
-				t_param.author_url = "https://github.com/bluebackblue";
+				//git_url
+				t_param.git_url = "https://github.com/";
 
-				//■package_name
+				//git_author
+				t_param.git_author = "bluebackblue";
+
+				//package_name
 				t_param.package_name = "SlackWebApi";
 
-				//■getpackageversion
+				//getpackageversion
 				t_param.getpackageversion = BlueBack.SlackWebApi.Version.GetPackageVersion;
 
 				//packagejson_unity
 				t_param.packagejson_unity = "2020.1";
 
-				//■packagejson_discription
+				//packagejson_discription
 				t_param.packagejson_discription = "SlackWebApi操作";
 
-				//■packagejson_keyword
+				//packagejson_keyword
 				t_param.packagejson_keyword = new string[]{
 					"slack","webapi"
 				};
 
-				//■changelog
+				//packagejson_dependencies
+				t_param.packagejson_dependencies = new System.Collections.Generic.Dictionary<string,string>();
+
+				//asmdef_reference
+				t_param.asmdef_reference = new string[]{
+				};
+
+				//editorasmdef_reference
+				t_param.editorasmdef_reference = new string[]{
+					"BlueBack.SlackWebApi",
+				};
+
+				//changelog
 				t_param.changelog = new string[]{
 					"# Changelog",
 					"",
@@ -68,7 +83,7 @@ namespace Editor
 					"",
 				};
 
-				//■readme_md
+				//readme_md
 				t_param.object_root_readme_md = new BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Type[]{
 
 					//概要。
@@ -86,7 +101,7 @@ namespace Editor
 						return new string[]{
 							"## ライセンス",
 							"MIT License",
-							"* " + a_argument.param.author_url + "/" + a_argument.param.package_name + "/blob/main/LICENSE",
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + "/blob/main/LICENSE",
 						};
 					},
 
@@ -94,10 +109,10 @@ namespace Editor
 					(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {
 						return new string[]{
 							"## 外部依存 / 使用ライセンス等",
-							//"* " + a_argument.param.author_url + "/" + "AssetLib",
+							//"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + "AssetLib",
 							"### サンプルのみ",
-							"* " + a_argument.param.author_url + "/" + "AssetLib",
-							"* " + a_argument.param.author_url + "/" + "JsonItem",
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + "AssetLib",
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + "JsonItem",
 						};
 					},
 
@@ -114,9 +129,9 @@ namespace Editor
 						return new string[]{
 							"## UPM",
 							"### 最新",
-							"* " + a_argument.param.author_url + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM#" + a_argument.version,
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM#" + a_argument.version,
 							"### 開発",
-							"* " + a_argument.param.author_url + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM",
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM",
 						};
 					},
 
