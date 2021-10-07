@@ -54,7 +54,9 @@ namespace Editor
 				};
 
 				//packagejson_dependencies
-				t_param.packagejson_dependencies = new System.Collections.Generic.Dictionary<string,string>();
+				t_param.packagejson_dependencies = new System.Collections.Generic.Dictionary<string,string>(){
+					//{"blueback.xxxxx","https://github.com/xxxxx/xxxxx"},
+				};
 
 				//asmdef_runtime
 				t_param.asmdef_runtime = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
@@ -96,7 +98,7 @@ namespace Editor
 					/*
 					"## [0.0.0] - 0000-00-00",
 					"### Changes",
-					"- Init",
+					"- xxxxxx",
 					"",
 					*/
 
@@ -130,39 +132,9 @@ namespace Editor
 
 					//依存。
 					(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {
-
 						System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 						t_list.Add("## 外部依存 / 使用ライセンス等");
-
-						{
-							System.Collections.Generic.HashSet<string> t_url_list = new System.Collections.Generic.HashSet<string>();
-
-							//runtine
-							for(int ii=0;ii<a_argument.param.asmdef_runtime.reference_list.Length;ii++){
-								t_url_list.Add("* " + a_argument.param.asmdef_runtime.reference_list[ii].url);
-							}
-
-							//editor
-							for(int ii=0;ii<a_argument.param.asmdef_editor.reference_list.Length;ii++){
-								t_url_list.Add("* " + a_argument.param.asmdef_editor.reference_list[ii].url);
-							}
-
-							t_list.AddRange(t_url_list);
-						}
-
-						t_list.Add("### サンプルのみ");
-						
-						{
-							System.Collections.Generic.HashSet<string> t_url_list = new System.Collections.Generic.HashSet<string>();
-
-							//sample
-							for(int ii=0;ii<a_argument.param.asmdef_sample.reference_list.Length;ii++){
-								t_url_list.Add("* " + a_argument.param.asmdef_sample.reference_list[ii].url);
-							}
-
-							t_list.AddRange(t_url_list);
-						}
-
+						t_list.AddRange(BlueBack.UpmVersionManager.Editor.Object_Setting.Create_RootReadMd_Asmdef_Dependence(a_argument));
 						return t_list.ToArray();
 					},
 
@@ -220,4 +192,5 @@ namespace Editor
 	}
 }
 #endif
+
 
