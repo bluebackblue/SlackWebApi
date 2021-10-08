@@ -6,7 +6,7 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 {
 	/** SendText
 	*/
-	public class SendText
+	public sealed class SendText
 	{
 		/** Mode
 		*/

@@ -6,7 +6,7 @@ namespace BlueBack.SlackWebApi.Api
 {
 	/** TextureUpload
 	*/
-	public class TextureUpload
+	public sealed class TextureUpload
 	{
 		/** Mode
 		*/

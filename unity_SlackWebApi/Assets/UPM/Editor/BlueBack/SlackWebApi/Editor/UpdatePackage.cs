@@ -15,7 +15,7 @@ namespace BlueBack.SlackWebApi.Editor
 	/** UpdatePackage
 	*/
 	#if(!DEF_USER_BLUEBACK_SLACKWEBAPI)
-	public class UpdatePackage
+	public static class UpdatePackage
 	{
 		/** MenuItem_BlueBack_SlackWebApi_UpdatePackage
 		*/

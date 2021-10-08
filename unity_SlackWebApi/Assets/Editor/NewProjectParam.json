@@ -1,0 +1,18 @@
+{
+   "overview":[
+      "SlackWebApi操作",
+      "* IncomingWebhooksで投稿。",
+      "* OAuthTokenで画像投稿。",
+   ],
+   "keyword":[
+      "slack","webapi"
+   ],
+   "root_readmemd_path":"../../README.md",
+   "discription":"SlackWebApi操作",
+   "git_path":"unity_SlackWebApi/Assets/UPM",
+   "git_author":"bluebackblue",
+   "git_url":"https://github.com/",
+   "author_name":"BlueBack",
+   "need_unity_version":"2020.1",
+   "package_name":"SlackWebApi"
+}
