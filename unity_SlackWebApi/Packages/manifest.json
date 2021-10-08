@@ -3,7 +3,7 @@
     "blueback.assetlib": "https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.32",
     "blueback.code": "https://github.com/bluebackblue/Code.git?path=unity_Code/Assets/UPM",
     "blueback.jsonitem": "https://github.com/bluebackblue/JsonItem.git?path=unity_JsonItem/Assets/UPM",
-    "blueback.upmversionmanager": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.22",
+    "blueback.upmversionmanager": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.29",
     "com.unity.collab-proxy": "1.5.7",
     "com.unity.ide.rider": "3.0.7",
     "com.unity.ide.visualstudio": "2.0.8",

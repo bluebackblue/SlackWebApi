@@ -21,7 +21,7 @@ namespace BlueBack.SlackWebApi
 
 		/** packageversion
 		*/
-		public const string packageversion = "0.0.13";
+		public const string packageversion = "0.0.14";
 
 		/** GetPackageVersion
 		*/

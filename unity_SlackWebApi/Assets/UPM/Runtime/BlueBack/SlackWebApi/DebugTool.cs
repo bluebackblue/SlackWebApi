@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief デバッグツール。
+ * @brief デバッグツール。自動生成。
 */
 
 

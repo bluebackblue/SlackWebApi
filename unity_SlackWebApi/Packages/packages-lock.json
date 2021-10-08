@@ -22,11 +22,11 @@
       "hash": "158454a25358cfc9bd077301583aa7b939bf5a93"
     },
     "blueback.upmversionmanager": {
-      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.22",
+      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.29",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1b37cc5bd4fa44c64251b3ce70ad52deb3ac18b7"
+      "hash": "91c3c26fefaae5fb4e62896329fffe56aa40b0de"
     },
     "com.unity.collab-proxy": {
       "version": "1.5.7",
