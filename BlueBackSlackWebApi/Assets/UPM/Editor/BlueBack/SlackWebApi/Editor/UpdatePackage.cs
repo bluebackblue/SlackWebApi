@@ -28,9 +28,9 @@ namespace BlueBack.SlackWebApi.Editor
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 				#endif
 			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM");
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/SlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM");
 			}else{
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/SlackWebApi.git?path=unity_SlackWebApi/Assets/UPM#" + t_version);
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/SlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#" + t_version);
 			}
 		}
 
