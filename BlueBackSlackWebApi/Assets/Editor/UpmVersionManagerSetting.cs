@@ -39,6 +39,9 @@ namespace Editor
 				//git_path
 				t_param.git_path = "BlueBackSlackWebApi/Assets/UPM";
 
+				//git_repos
+				t_param.git_repos = "UpmSlackWebApi";
+
 				//package_name
 				t_param.package_name = "SlackWebApi";
 
@@ -74,7 +77,7 @@ namespace Editor
 					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
 						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
 							package_name = "BlueBack.SlackWebApi",
-							url = "https://github.com/bluebackblue/SlackWebApi",
+							url = "https://github.com/bluebackblue/UpmSlackWebApi",
 						},
 					},
 					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
@@ -86,11 +89,11 @@ namespace Editor
 					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
 						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
 							package_name = "BlueBack.SlackWebApi",
-							url = "https://github.com/bluebackblue/SlackWebApi",
+							url = "https://github.com/bluebackblue/UpmSlackWebApi",
 						},
 						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
 							package_name = "BlueBack.SlackWebApi.Editor",
-							url = "https://github.com/bluebackblue/SlackWebApi",
+							url = "https://github.com/bluebackblue/UpmSlackWebApi",
 						},
 					},
 					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
@@ -126,7 +129,7 @@ namespace Editor
 						return new string[]{
 							"## ライセンス",
 							"MIT License",
-							"* " + t_param.git_url + t_param.git_author + "/" + t_param.package_name + "/blob/main/LICENSE",
+							"* " + t_param.git_url + t_param.git_author + "/" + t_param.git_repos + "/blob/main/LICENSE",
 						};
 					},
 
@@ -151,9 +154,9 @@ namespace Editor
 						return new string[]{
 							"## UPM",
 							"### 最新",
-							"* " + t_param.git_url + t_param.git_author + "/" + t_param.package_name + ".git?path=" + t_param.git_path + "#" + a_argument.version,
+							"* " + t_param.git_url + t_param.git_author + "/" + t_param.git_repos + ".git?path=" + t_param.git_path + "#" + a_argument.version,
 							"### 開発",
-							"* " + t_param.git_url + t_param.git_author + "/" + t_param.package_name + ".git?path=" + t_param.git_path,
+							"* " + t_param.git_url + t_param.git_author + "/" + t_param.git_repos + ".git?path=" + t_param.git_path,
 						};
 					},
 
