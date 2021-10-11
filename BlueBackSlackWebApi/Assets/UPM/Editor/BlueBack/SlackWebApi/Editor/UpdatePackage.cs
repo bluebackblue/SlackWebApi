@@ -14,23 +14,28 @@ namespace BlueBack.SlackWebApi.Editor
 {
 	/** UpdatePackage
 	*/
-	#if(!DEF_USER_BLUEBACK_SLACKWEBAPI)
 	public static class UpdatePackage
 	{
+		/** packageversion
+		*/
+		public const string packageversion = Version.packageversion;
+
 		/** MenuItem_BlueBack_SlackWebApi_UpdatePackage
 		*/
-		[UnityEditor.MenuItem("BlueBack/SlackWebApi/UpdatePackage")]
+		#if(!DEF_USER_BLUEBACK_SLACKWEBAPI)
+		[UnityEditor.MenuItem("BlueBack/SlackWebApi/UpdatePackage " + Version.packageversion)]
+		#endif
 		public static void MenuItem_BlueBack_SlackWebApi_UpdatePackage()
 		{
-			string t_version = GetLastReleaseNameFromGitHub("bluebackblue",Version.packagename);
+			string t_version = GetLastReleaseNameFromGitHub();
 			if(t_version == null){
 				#if(UNITY_EDITOR)
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 				#endif
 			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/SlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM");
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM");
 			}else{
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/SlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#" + t_version);
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#" + t_version);
 			}
 		}
 
@@ -69,10 +74,12 @@ namespace BlueBack.SlackWebApi.Editor
 
 		/** GetLastReleaseNameFromGitHub
 		*/
-		private static string GetLastReleaseNameFromGitHub(string a_auther,string a_reposname)
+		private static string GetLastReleaseNameFromGitHub()
 		{
+			string t_url = "https://api.github.com/repos/bluebackblue/UpmSlackWebApi/releases/latest";
+
 			try{
-				byte[] t_binary = DownloadBinary("https://api.github.com/repos/" + a_auther + "/" + a_reposname + "/releases/latest");
+				byte[] t_binary = DownloadBinary(t_url);
 				if(t_binary != null){
 					string t_text = System.Text.Encoding.UTF8.GetString(t_binary,0,t_binary.Length);
 					System.Text.RegularExpressions.Match t_match = System.Text.RegularExpressions.Regex.Match(t_text,".*(?<name>\\\"tag_name\\\")\\s*\\:\\s*\\\"(?<value>[a-zA-Z0-9_\\.]*)\\\".*");
@@ -81,25 +88,24 @@ namespace BlueBack.SlackWebApi.Editor
 						return t_text;
 					}else{
 						#if(UNITY_EDITOR)
-						DebugTool.EditorLogError(a_auther + " : " + a_reposname + " : text == null");
+						DebugTool.EditorLogError(t_url + " : text == null");
 						#endif
 						return null;
 					}
 				}else{
 					#if(UNITY_EDITOR)
-					DebugTool.EditorLogError(a_auther + " : " + a_reposname + " : binary == null");
+					DebugTool.EditorLogError(t_url + " : binary == null");
 					#endif
 					return null;
 				}
 			}catch(System.Exception t_exception){
 				#if(UNITY_EDITOR)
-				DebugTool.EditorLogError(a_auther + " : " + a_reposname + " : " + t_exception.Message + "\n" + t_exception.StackTrace);
+				DebugTool.EditorLogError(t_url + " : " + t_exception.Message + "\n" + t_exception.StackTrace);
 				#endif
 				return null;
 			}
 		}
 	}
-	#endif
 }
 #endif
 

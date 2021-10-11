@@ -1,0 +1,54 @@
+{
+    "namespace_author":"BlueBack",
+    "namespace_package":"SlackWebApi",
+    "git_url":"https://github.com/bluebackblue/UpmSlackWebApi",
+    "git_api":"https://api.github.com/repos/bluebackblue/UpmSlackWebApi",
+    "git_path":"BlueBackSlackWebApi/Assets/UPM",
+    "discription_simple":"SlackWebApi操作",
+    "discription_detal":[
+        "SlackWebApi操作",
+        "* IncomingWebhooksで投稿",
+        "* OAuthTokenで画像投稿",
+    ],
+    "keyword":[
+         "slack","webapi",
+    ],
+    "changelog":[
+        "# Changelog",
+        "",
+        "## [0.0.0] - 2021-04-02",
+        "### Changes",
+        "- Init",
+        "",
+    ],
+    "root_readmemd_path":"../../README.md",
+    "need_unity_version":"2020.1",
+    "asmdef_runtime":{
+        "define_list":[
+        ],
+        "reference_list":[
+        ]
+    },
+    "asmdef_editor":{
+        "define_list":[
+        ],
+        "reference_list":[
+            {
+                "use":"use",
+                "package_fullname":"BlueBack.SlackWebApi",
+                "url":"https://github.com/bluebackblue/UpmSlackWebApi",
+            },
+        ]
+    },
+    "asmdef_sample":{
+        "define_list":[
+        ],
+        "reference_list":[
+            {
+                "use":"use",
+                "package_fullname":"BlueBack.SlackWebApi",
+                "url":"https://github.com/bluebackblue/UpmSlackWebApi",
+            },
+        ]
+    },
+}

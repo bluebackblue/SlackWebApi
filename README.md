@@ -1,7 +1,7 @@
 # BlueBack.SlackWebApi
 SlackWebApi操作
-* IncomingWebhooksで投稿。
-* OAuthTokenで画像投稿。
+* IncomingWebhooksで投稿
+* OAuthTokenで画像投稿
 
 ## ライセンス
 MIT License
@@ -19,7 +19,7 @@ Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.16
+* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.17
 ### 開発
 * https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM
 
