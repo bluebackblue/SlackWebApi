@@ -19,7 +19,7 @@ Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.17
+* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.18
 ### 開発
 * https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM
 
@@ -34,8 +34,10 @@ Gitクライアントがインストールされている必要がある。
 * https://docs.unity3d.com/ja/current/Manual/upm-git.html
 * https://git-scm.com/
 
-文字列送信。
+## 例
 ```
+/** 文字列送信。
+*/
 public sealed class Exsample : UnityEngine.MonoBehaviour
 {
 	/** sendtext

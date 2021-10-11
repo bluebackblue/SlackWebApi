@@ -4,9 +4,11 @@
 */
 namespace Editor
 {
-	//<<COMMENT>>文字列送信。
+	//<<COMMENT>>## 例
 
 	//<<BLOACKSTART>>
+	/** 文字列送信。
+	*/
 	public sealed class Exsample : UnityEngine.MonoBehaviour
 	{
 		/** sendtext
