@@ -8,10 +8,10 @@
     "discription_detal":[
         "SlackWebApi操作",
         "* IncomingWebhooksで投稿",
-        "* OAuthTokenで画像投稿",
+        "* OAuthTokenで画像投稿"
     ],
     "keyword":[
-         "slack","webapi",
+         "slack","webapi"
     ],
     "changelog":[
         "# Changelog",
@@ -19,7 +19,7 @@
         "## [0.0.0] - 2021-04-02",
         "### Changes",
         "- Init",
-        "",
+        ""
     ],
     "root_readmemd_path":"../../README.md",
     "need_unity_version":"2020.1",
@@ -36,7 +36,7 @@
             {
                 "use":"use",
                 "package_fullname":"BlueBack.SlackWebApi",
-                "url":"https://github.com/bluebackblue/UpmSlackWebApi",
+                "url":"https://github.com/bluebackblue/UpmSlackWebApi"
             },
         ]
     },
@@ -47,8 +47,8 @@
             {
                 "use":"use",
                 "package_fullname":"BlueBack.SlackWebApi",
-                "url":"https://github.com/bluebackblue/UpmSlackWebApi",
-            },
+                "url":"https://github.com/bluebackblue/UpmSlackWebApi"
+            }
         ]
-    },
+    }
 }
