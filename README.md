@@ -15,11 +15,11 @@ MIT License
 * https://github.com/bluebackblue/UpmSlackWebApi
 
 ## 動作確認
-Unity 2021.1.11f1
+Unity 2021.2.0b9
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.19
+* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.20
 ### 開発
 * https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM
 

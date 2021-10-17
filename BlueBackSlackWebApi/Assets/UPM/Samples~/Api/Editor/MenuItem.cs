@@ -1,17 +1,17 @@
 
 
-/** Samples.SlackWebApi.Api.Editor
+/** Samples.SlackWebApi.Api
 */
-namespace Samples.SlackWebApi.Api.Editor
+namespace Samples.SlackWebApi.Api
 {
 	/** MenuItem
 	*/
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		/** FileUpdate_CoroutineDummy
+		/** FileUpdate
 		*/
-		public class FileUpdate_CoroutineDummy
+		public class FileUpdate
 		{
 			/** TextureUpload
 			*/
@@ -19,7 +19,7 @@ namespace Samples.SlackWebApi.Api.Editor
 
 			/** constructor
 			*/
-			public FileUpdate_CoroutineDummy()
+			public FileUpdate()
 			{
 				UnityEngine.Debug.Log("Start");
 
@@ -95,10 +95,10 @@ namespace Samples.SlackWebApi.Api.Editor
 
 		/** ファイルアップロード。
 		*/
-		[UnityEditor.MenuItem("サンプル/SlackWebApi/Api/FileUpdate")]
+		[UnityEditor.MenuItem("サンプル/BlueBack.SlackWebApi/Api/FileUpdate")]
 		private static void MenuItem_FileUpdate()
 		{
-			UnityEditor.EditorApplication.update += new FileUpdate_CoroutineDummy().Update;
+			UnityEditor.EditorApplication.update += new FileUpdate().Update;
 		}
 	}
 	#endif
