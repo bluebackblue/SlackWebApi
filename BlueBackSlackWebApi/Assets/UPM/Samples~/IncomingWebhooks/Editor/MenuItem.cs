@@ -1,8 +1,8 @@
 
 
-/** Samples.SlackWebApi.IncomingWebhooks
+/** BlueBack.SlackWebApi.Samples.IncomingWebhooks.Editor
 */
-namespace Samples.SlackWebApi.IncomingWebhooks
+namespace BlueBack.SlackWebApi.Samples.IncomingWebhooks.Editor
 {
 	/** MenuItem
 	*/

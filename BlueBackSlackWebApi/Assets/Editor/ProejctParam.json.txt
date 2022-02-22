@@ -34,7 +34,7 @@
         ],
         "reference_list":[
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.SlackWebApi",
                 "url":"https://github.com/bluebackblue/UpmSlackWebApi"
             },
@@ -45,7 +45,7 @@
         ],
         "reference_list":[
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.SlackWebApi",
                 "url":"https://github.com/bluebackblue/UpmSlackWebApi"
             }
