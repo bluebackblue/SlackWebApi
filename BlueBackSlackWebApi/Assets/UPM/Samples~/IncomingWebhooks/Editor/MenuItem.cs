@@ -80,7 +80,7 @@ namespace BlueBack.SlackWebApi.Samples.IncomingWebhooks.Editor
 
 		/** 送信。
 		*/
-		[UnityEditor.MenuItem("サンプル/SlackWebApi/IncomingWebhooks/Send")]
+		[UnityEditor.MenuItem("Samples/SlackWebApi/IncomingWebhooks/Send")]
 		private static void MenuItem_Send()
 		{
 			UnityEditor.EditorApplication.update += new SendText().Update;

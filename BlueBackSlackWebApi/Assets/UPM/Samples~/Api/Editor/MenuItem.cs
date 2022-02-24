@@ -95,7 +95,7 @@ namespace BlueBack.SlackWebApi.Samples.Api.Editor
 
 		/** ファイルアップロード。
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.SlackWebApi/Api/FileUpdate")]
+		[UnityEditor.MenuItem("Samples/BlueBack.SlackWebApi/Api/FileUpdate")]
 		private static void MenuItem_FileUpdate()
 		{
 			UnityEditor.EditorApplication.update += new FileUpdate().Update;

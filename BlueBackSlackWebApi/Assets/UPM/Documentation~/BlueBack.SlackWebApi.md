@@ -19,7 +19,7 @@ Unity 2022.1.0b8
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.21
+* https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM#0.0.22
 ### 開発
 * https://github.com/bluebackblue/UpmSlackWebApi.git?path=BlueBackSlackWebApi/Assets/UPM
 
