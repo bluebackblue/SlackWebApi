@@ -32,7 +32,7 @@ namespace BlueBack.SlackWebApi.Samples.Api.Editor
 				string t_channel = "#general";
 
 				//開発用。
-				#if(DEF_USER_BLUEBACK)
+				#if(USERDEF_BLUEBACK)
 				{
 					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("../../../config/SlackWebApi.txt",null));
 					t_oauthtoken = t_jsonitem.GetItem("xoxb").GetStringData();

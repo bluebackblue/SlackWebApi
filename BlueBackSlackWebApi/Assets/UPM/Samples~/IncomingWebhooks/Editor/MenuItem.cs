@@ -28,7 +28,7 @@ namespace BlueBack.SlackWebApi.Samples.IncomingWebhooks.Editor
 				string t_webhookurl = "https://hooks.slack.com/services/T00000000/B0000000000/000000000000000000000000";
 
 				//開発用。
-				#if(DEF_USER_BLUEBACK)
+				#if(USERDEF_BLUEBACK)
 				{
 					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("../../../config/SlackWebApi.txt",null));
 					t_webhookurl = t_jsonitem.GetItem("webhook").GetStringData();

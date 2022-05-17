@@ -22,7 +22,7 @@ namespace BlueBack.SlackWebApi.Editor
 
 		/** MenuItem_UpdatePackage_Develop
 		*/
-		#if(!DEF_USER_BLUEBACK_SLACKWEBAPI)
+		#if(!USERDEF_BLUEBACK_SLACKWEBAPI)
 		[UnityEditor.MenuItem("BlueBack/SlackWebApi/UpdatePackage/Develop")]
 		#endif
 		public static void MenuItem_UpdatePackage_Develop()
@@ -40,7 +40,7 @@ namespace BlueBack.SlackWebApi.Editor
 
 		/** MenuItem_UpdatePackage_Last
 		*/
-		#if(!DEF_USER_BLUEBACK_SLACKWEBAPI)
+		#if(!USERDEF_BLUEBACK_SLACKWEBAPI)
 		[UnityEditor.MenuItem("BlueBack/SlackWebApi/UpdatePackage/Last " + Version.packageversion)]
 		#endif
 		public static void MenuItem_UpdatePackage_Last()
