@@ -152,7 +152,7 @@ namespace BlueBack.SlackWebApi.Api
 						this.errorstring = null;
 
 						this.mode = Mode.Result;
-						
+
 						break;
 					}else if(this.webrequest.error != null){
 						//エラー。

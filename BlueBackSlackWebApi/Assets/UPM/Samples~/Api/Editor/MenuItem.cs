@@ -69,7 +69,7 @@ namespace BlueBack.SlackWebApi.Samples.Api.Editor
 
 				//終了。
 				UnityEditor.EditorApplication.update -= Update;
-				
+
 				{
 					UnityEngine.Debug.Log("mode : " + this.fileupload.mode.ToString());
 

@@ -56,7 +56,7 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 		/** uploadhandler
 		*/
 		public UnityEngine.Networking.UploadHandlerRaw uploadhandler;
-		
+
 		/** downloadhandler
 		*/
 		public UnityEngine.Networking.DownloadHandlerBuffer downloadhandler;
@@ -148,7 +148,7 @@ namespace BlueBack.SlackWebApi.IncomingWebhooks
 						this.errorstring = null;
 
 						this.mode = Mode.Result;
-						
+
 						break;
 					}else if(this.webrequest.error != null){
 						//エラー。

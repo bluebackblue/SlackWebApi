@@ -54,7 +54,7 @@ namespace BlueBack.SlackWebApi.Samples.IncomingWebhooks.Editor
 
 				//終了。
 				UnityEditor.EditorApplication.update -= Update;
-				
+
 				{
 					UnityEngine.Debug.Log("mode : " + this.sendtext.mode.ToString());
 
