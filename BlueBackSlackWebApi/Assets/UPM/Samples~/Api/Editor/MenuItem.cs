@@ -7,11 +7,11 @@ namespace BlueBack.SlackWebApi.Samples.Api.Editor
 	/** MenuItem
 	*/
 	#if(UNITY_EDITOR)
-	public class MenuItem
+	public static class MenuItem
 	{
 		/** FileUpdate
 		*/
-		public class FileUpdate
+		public sealed class FileUpdate
 		{
 			/** TextureUpload
 			*/

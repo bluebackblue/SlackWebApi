@@ -38,7 +38,7 @@
 				"package_fullname":"BlueBack.SlackWebApi",
 				"url":"https://github.com/bluebackblue/UpmSlackWebApi",
 				"define_package_pathname":"blueback.slackwebapi"
-			},
+			}
 		]
 	},
 	"asmdef_sample":{

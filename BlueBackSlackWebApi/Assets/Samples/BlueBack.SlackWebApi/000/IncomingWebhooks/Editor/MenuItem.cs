@@ -7,11 +7,11 @@ namespace BlueBack.SlackWebApi.Samples.IncomingWebhooks.Editor
 	/** MenuItem
 	*/
 	#if(UNITY_EDITOR)
-	public class MenuItem
+	public static class MenuItem
 	{
 		/** SendText
 		*/
-		public class SendText
+		public sealed class SendText
 		{
 			/** sendtext
 			*/

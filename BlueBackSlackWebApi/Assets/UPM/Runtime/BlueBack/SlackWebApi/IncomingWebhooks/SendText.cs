@@ -1,5 +1,12 @@
 
 
+/**
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief スラック。
+*/
+
+
 /** BlueBack.SlackWebApi.IncomingWebhooks
 */
 namespace BlueBack.SlackWebApi.IncomingWebhooks
